@@ -1,5 +1,6 @@
-1. Make sure you have python 3.7.9 installed
-2. pip install -r requirements.txt
-3. To run test pytest -rA tests/
+1. Make sure you have python installed
+2. Install Requirements ``` pip install -r requirements.txt ```
+3. Run ``` python jobseeker.py ```
+4. To run test  ``` pytest -rA tests/ ```
 
 Run the main function: python jobseeker.py
