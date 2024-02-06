@@ -1,4 +1,4 @@
-*** Ready Tech Job Seeker by Nelson Feng ***
+**Ready Tech Job Seeker by Nelson Feng**
 
 1. Requires python 3.9+
 2. Install Requirements ``` pip3 install -r requirements.txt ```
