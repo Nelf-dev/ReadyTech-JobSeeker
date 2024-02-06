@@ -1,16 +1,15 @@
 import pytest
-import pandas
+import pandas as pd
 import source.jobseeker as jobseeker
 
-test_df = pandas.DataFrame(columns=['id', 'name', 'skills'])
-df_jobs = pandas.read_csv('source/jobs.csv')
+df_jobs = pd.read_csv('source/jobs.csv')
 
 test_data = [
     {'id': 12, 'name': 'Jane Smith', 'skills': 'Java, JavaScript'},
     {'id': 11, 'name': 'John Doe', 'skills': 'Python    ,     SQL   '}
 ]
 
-test_df = test_df.append(test_data, ignore_index=True)
+test_df = pd.DataFrame(test_data)
 
 result = jobseeker.process_jobseekers(test_df, df_jobs)
 

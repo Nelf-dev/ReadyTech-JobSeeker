@@ -1,5 +1,6 @@
 import pandas as pd
 import math
+import pdb
 
 def process_jobseeker(jobseeker, df_jobs, ranked_jobs_for_seekers):
     seeker_skills_array = [lang.strip() for lang in jobseeker['skills'].split(",")]
@@ -28,8 +29,9 @@ def process_jobseeker(jobseeker, df_jobs, ranked_jobs_for_seekers):
         seeker_jobs.append(new_data)
 
     sorted_seeker_jobs = sorted(seeker_jobs, key=lambda x: (-float(x['matching_skill_percent'].strip('%')), x['job_id']))
-
-    ranked_jobs_for_seekers = ranked_jobs_for_seekers.append(sorted_seeker_jobs, ignore_index=True)
+    sorted_seeker_jobs_df = pd.DataFrame.from_records(sorted_seeker_jobs)
+    
+    ranked_jobs_for_seekers = pd.concat([ranked_jobs_for_seekers,sorted_seeker_jobs_df],ignore_index=True)
 
     return ranked_jobs_for_seekers
 
